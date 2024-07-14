@@ -3,22 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sky Sync</title>
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <main>
-      <div>Weather App</div>
+     <div class="head1">Sky Sync <i class="fa-solid fa-cloud"></i></div>
+    <div class="desc1">Real-time weather updates - always in sync</div>
 
-      <div>
-        <input type="text" id="inp1" placeholder="enter a city name"/>
+    <div class="sec1">
+
+    <input type="text" id="inp1" placeholder="search city"/>
         <button id="srch_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
+      
+
+      <div class="sec2">
+       <div> <i class="fa-solid fa-earth-americas"></i></div>
+       <div>Check city weather</div>
+      </div>
+
+      </div>
       <div id="error">Invalid City</div>
+
+
+    <main id="main">
+     
+      
 
       <div>
         <div id="cty_name"></div>
@@ -27,7 +47,7 @@
         <div id="dp">Rainy</div>
       </div>
 
-      <div class="card">
+      <div>
 
         <div>
           <img src="#" />
@@ -56,7 +76,7 @@
         <div>
             <div id="country"></div>
         </div>
-        
+
       </div>
 
       
