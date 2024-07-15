@@ -4,6 +4,8 @@ const srch_btn_doc = document.getElementById("srch_btn");
 const error_doc = document.getElementById("error");
 const main_doc = document.getElementById("main")
 
+const img1_doc = document.getElementById("img1");
+
 let city;
 
 if (localStorage.length != 0) {
@@ -51,10 +53,11 @@ async function getWeather(cty) {
   }
 
   let data = await response.json();
-  console.log(data);
+  //console.log(data);
 
-  document.getElementById("temp").innerHTML = `${Math.round(data.main.temp)}&degC;`;
+  document.getElementById("temp").innerHTML = `${Math.round(data.main.temp)}&degC`;
   document.getElementById("dp").innerHTML = `${data.weather[0].main}`;
+  console.log(data.weather[0].main)
   document.getElementById("wind_sp").innerText = `${data.wind.speed}`;
   document.getElementById("hum").innerText = `${data.main.humidity}`;
   document.getElementById("cld").innerText = `${data.clouds.all}`;
@@ -62,6 +65,24 @@ async function getWeather(cty) {
 
   document.getElementById("country").innerText = `Country:${data.sys.country}`;
   document.getElementById("cty_name").innerText = `${data.name}`;
+
+  ChangeIcon(data);
+}
+
+function ChangeIcon(x){
+
+if(x.weather[0].main=="Clear"){
+  img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-sun"></i>`;
+}
+if(x.weather[0].main=="Clouds"){
+  img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-cloud"></i>`;
+}
+if(x.weather[0].main=="Rain"){
+  img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-cloud-rain"></i>`
+}
+if(x.weather[0].main=="Haze"){
+  img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-smog"></i>`
+}
 }
 
 getWeather(city);

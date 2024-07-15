@@ -11,7 +11,16 @@
 }
 body{
     background-color: var(--BGCOLOR);
+    background-image: radial-gradient(circle,#9cbbb9ad,rgb(182, 182, 182));
     
+    
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .head1{
@@ -48,6 +57,7 @@ body{
     padding: 0.5rem;
     border: 0;
     background-color:var(--HEADBGCOLOR) ;
+    background-image:linear-gradient(to right,var(--HEADBGCOLOR),#8298b9);
     border-radius: 1rem 0 0 1rem;
     color: white;
     padding-left: 1rem;
@@ -90,4 +100,44 @@ body{
 .sec2 div{
     font-size: 2rem;
     margin: 0.5rem;
+}
+
+.sec3{
+    margin: 1rem;
+    background-color:#21395a;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1rem;
+    color: white;
+    background-image: radial-gradient(circle,var(--HEADBGCOLOR),#667BC6);
+    max-width:auto;
+    box-shadow: 5px 5px 2px grey;
+    opacity: 0.8;
+    min-width: 350px;
+}
+
+#cty_name{
+    text-align: center;
+    color: white;
+    font-size: 4rem;
+    white-space: nowrap;
+}
+
+#temp{
+    font-size: 3.5rem;
+}
+#dp{
+    font-size: 3rem;
+    margin-top: 0.5rem;
+}
+.sec4{
+    display: flex;
+}
+
+
+.icon_size{
+    font-size: 6rem;
 }
