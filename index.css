@@ -23,6 +23,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 4rem;
 }
 
 .head1{
@@ -262,8 +263,31 @@ hr{
     
 }
 
+.info:focus{
+    border: 4px solid rgba(255, 255, 255, 0.233);
+    
+    
+}
 
+
+/* 
 .rotate{
     rotate: 360deg;
     transition-duration: 2s;
+} */
+
+footer{
+    /* background-color:#263c5c; */
+    background-color:#40679ed7;
+    text-align: center;
+    padding: 0.5rem;
+    color: rgba(255, 255, 255, 0.658);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a{
+    color: white;
+    letter-spacing: 0.1rem;
 }

@@ -6,7 +6,12 @@ const main_doc = document.getElementById("main")
 
 const img1_doc = document.getElementById("img1");
 const vsb_d_doc = document.getElementById("vsb_d")
+
+const year_doc = document.getElementById("year");
+const date = new Date();
 let city;
+
+year_doc.innerText=date.getFullYear()
 
 if (localStorage.length != 0) {
   city = JSON.parse(localStorage.getItem("city_name"));
