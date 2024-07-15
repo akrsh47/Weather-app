@@ -64,7 +64,7 @@ async function getWeather(cty) {
 
   document.getElementById("temp").innerHTML = `${Math.round(data.main.temp)}&degC`;
   document.getElementById("dp").innerHTML = `${data.weather[0].main}`;
-  console.log(data.weather[0].main)
+  //console.log(data.weather[0].main)
   document.getElementById("wind_sp").innerText = `${data.wind.speed} Km/h`;
   document.getElementById("hum").innerText = `${data.main.humidity} %`;
   document.getElementById("cld").innerText = `${data.clouds.all} %`;
@@ -76,7 +76,7 @@ async function getWeather(cty) {
 
   ChangeIcon(data);
   ChangeVisibilityDescrip(Math.round(data.visibility/1000))
-  console.log(Math.round(data.visibility/1000))
+  //console.log(Math.round(data.visibility/1000))
   
 }
 
@@ -110,6 +110,11 @@ if(x.weather[0].main=="Rain"){
 }
 if(x.weather[0].main=="Haze"){
   img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-smog"></i>`
+}
+if(x.weather[0].main=="Drizzle"){
+  img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-cloud-rain"></i>`
+
+
 }
 
 }
