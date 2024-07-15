@@ -5,7 +5,7 @@ const error_doc = document.getElementById("error");
 const main_doc = document.getElementById("main")
 
 const img1_doc = document.getElementById("img1");
-
+const vsb_d_doc = document.getElementById("vsb_d")
 let city;
 
 if (localStorage.length != 0) {
@@ -29,7 +29,9 @@ srch_btn_doc.addEventListener("click", function () {
     city = inp1_doc.value;
     localStorage.setItem("city_name", JSON.stringify(city));
     getWeather(city);
+    
     inp1_doc.value = "";
+    
   }
 });
 
@@ -58,31 +60,77 @@ async function getWeather(cty) {
   document.getElementById("temp").innerHTML = `${Math.round(data.main.temp)}&degC`;
   document.getElementById("dp").innerHTML = `${data.weather[0].main}`;
   console.log(data.weather[0].main)
-  document.getElementById("wind_sp").innerText = `${data.wind.speed}`;
-  document.getElementById("hum").innerText = `${data.main.humidity}`;
-  document.getElementById("cld").innerText = `${data.clouds.all}`;
-  document.getElementById("visb").innerText = `${data.visibility}`;
+  document.getElementById("wind_sp").innerText = `${data.wind.speed} Km/h`;
+  document.getElementById("hum").innerText = `${data.main.humidity} %`;
+  document.getElementById("cld").innerText = `${data.clouds.all} %`;
+  document.getElementById("visb").innerText = Math.round(`${data.visibility}`/1000);
+  document.getElementById("visb").innerText+=" Km";
 
   document.getElementById("country").innerText = `Country:${data.sys.country}`;
   document.getElementById("cty_name").innerText = `${data.name}`;
 
   ChangeIcon(data);
+  ChangeVisibilityDescrip(Math.round(data.visibility/1000))
+  console.log(Math.round(data.visibility/1000))
+  
 }
 
 function ChangeIcon(x){
+  //img1_doc.classList.remove("rotate")
+  let degree = `0deg`;
+  img1_doc.style.rotate=`${degree}`;
 
+  
 if(x.weather[0].main=="Clear"){
   img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-sun"></i>`;
+  //img1_doc.classList.add("rotate")
+  degree=`360deg`;
+  
+
+  img1_doc.style.rotate=`${degree}`;
+  img1_doc.style.transitionDuration="2s";
+
+
 }
 if(x.weather[0].main=="Clouds"){
   img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-cloud"></i>`;
+  
 }
 if(x.weather[0].main=="Rain"){
   img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-cloud-rain"></i>`
+  degree=`15deg`;
+  img1_doc.style.rotate=`${degree}`;
+  img1_doc.style.transitionDuration="1s";
+
 }
 if(x.weather[0].main=="Haze"){
   img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-smog"></i>`
 }
+
 }
 
-getWeather(city);
+function ChangeVisibilityDescrip(x){
+  if(x>=10){
+    vsb_d_doc.innerHTML=`Excellent Visibility`
+  }
+  else if(x<10 && x>5){
+    vsb_d_doc.innerHTML=`Good Visibility`
+
+  }
+  else if(x>2 && x<=5){
+    vsb_d_doc.innerHTML=`Moderate Visibility`
+
+  }
+  else if(x<=2 && x>=1){
+    vsb_d_doc.innerHTML=`Low Visibility`
+
+  }
+  else if(x<1){
+    vsb_d_doc.innerHTML=`Very Low Visibility`
+
+  }
+}
+
+
+
+getWeather(city)

@@ -12,6 +12,8 @@
 body{
     background-color: var(--BGCOLOR);
     background-image: radial-gradient(circle,#9cbbb9ad,rgb(182, 182, 182));
+
+    
     
     
 }
@@ -63,6 +65,13 @@ main{
     padding-left: 1rem;
 }
 
+#inp1:focus{
+    background-image: none;
+    background-color: #9ea9b9;
+    color: black;
+    
+}
+
 /* .sec1 input:focus{
    
 } */
@@ -78,6 +87,19 @@ main{
     
     
 }
+
+.sec1 button:hover{
+    opacity: 0.7;
+}
+
+.sec1 button:focus{
+
+    opacity: 0.8;
+}
+
+
+
+
 
 #error{
     text-align: center;
@@ -116,28 +138,132 @@ main{
     max-width:auto;
     box-shadow: 5px 5px 2px grey;
     opacity: 0.8;
-    min-width: 350px;
+    min-width: 340px;
+    
+    
 }
+
 
 #cty_name{
     text-align: center;
     color: white;
     font-size: 4rem;
     white-space: nowrap;
+    padding-bottom: 0.5rem;
 }
 
 #temp{
     font-size: 3.5rem;
+    padding-top:1rem;
 }
 #dp{
     font-size: 3rem;
     margin-top: 0.5rem;
+    
 }
 .sec4{
     display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 90%;
+    
+    
+    /* min-width: 340px; */
+    padding: 1rem;
+    font-size: 2rem;
+    flex-wrap:wrap;
+    border: 5px white #40679E;
+    background-image: radial-gradient(circle,#40679E,#667BC6,#899bb6);
+    opacity: 0.9;
+    color: white;
+    
+    flex-direction: column;
+    box-shadow: 2px 2px 2px grey;
+    margin: 0 auto;
+    
+
+}
+
+.sec4 div{
+    padding: 0.5rem;
+    text-shadow: 5px 5px 2px grey;
+    
+}
+
+.sec5{
+    background-image: radial-gradient(circle,#40679E,#667BC6,#9ea9b9);
+    width: 90%;
+    margin-top: 0.5rem;
+    text-align: center;
+    color: white;
+    border-radius: 0 0 1rem 1rem;
+    padding: 0.3rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 3rem;
+    margin: 0.5rem auto;
+    box-shadow: 2px 2px 2px grey;
+
 }
 
 
 .icon_size{
     font-size: 6rem;
+    filter:drop-shadow(5px 5px 2px black);
+    
+}
+
+
+
+hr{
+    color:var(--BGCOLOR);
+    margin: 2rem auto;
+    width: 89%;
+    border: 2px solid grey;
+    border-radius: 2rem;
+    opacity: 0.2;
+}
+
+.head2{
+    background-image: radial-gradient(circle,#40679E,#667BC6,#9ea9b9);
+    width: 90%;
+    
+    text-align: center;
+    color: white;
+    border-radius:1rem 1rem 0 0;
+    padding: 0.3rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 3rem;
+    margin: 0.5rem auto;
+    box-shadow: 2px 2px 2px grey;
+    letter-spacing: 0.3rem;
+    font-size: 2rem;
+}
+
+#vsb_d{
+    font-size: 1rem;
+    flex:2;
+}
+
+.info{
+    /* background-color: grey; */
+    
+    border-radius: 1rem;
+    border: 4px solid transparent;
+    
+    margin: 0.2rem 0;
+    display: flex;
+    flex-wrap:wrap;
+    
+}
+
+.info:hover{
+    border: 4px solid rgba(255, 255, 255, 0.233);
+    
+    
+}
+
+
+.rotate{
+    rotate: 360deg;
+    transition-duration: 2s;
 }
