@@ -9,10 +9,13 @@
     --BGCOLOR:#9cbbb9ad;
     --HEADBGCOLOR:#40679E;
 }
+
+
 body{
     background-color: var(--BGCOLOR);
     background-image: radial-gradient(circle,#9cbbb9ad,rgb(182, 182, 182));
-
+    min-height: 100vh;
+    
     
     
     
@@ -23,7 +26,9 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
     margin-bottom: 4rem;
+    
 }
 
 .head1{
@@ -181,9 +186,16 @@ main{
     flex-direction: column;
     box-shadow: 2px 2px 2px grey;
     margin: 0 auto;
+    max-width: 700px;
+   
+    
+    
     
 
 }
+
+
+
 
 .sec4 div{
     padding: 0.5rem;
@@ -203,6 +215,7 @@ main{
     margin-bottom: 3rem;
     margin: 0.5rem auto;
     box-shadow: 2px 2px 2px grey;
+    max-width: 700px;
 
 }
 
@@ -238,6 +251,7 @@ hr{
     box-shadow: 2px 2px 2px grey;
     letter-spacing: 0.3rem;
     font-size: 2rem;
+    max-width: 700px;
 }
 
 #vsb_d{
@@ -290,4 +304,48 @@ footer{
 footer a{
     color: white;
     letter-spacing: 0.1rem;
+}
+
+@media screen and (min-width:450px){
+    .desc1{
+        text-align: right;
+        font-size: 1.3rem;
+    }
+    .head1{
+        font-size:4.5rem;
+    }
+
+    .sec3{
+        max-width: 600px;
+        margin: auto;
+        width: 80%;
+    }
+    .sec1 input{
+        flex: 3;
+        
+       
+    }
+    .sec1{
+        max-width: 700px;
+        display: flex;
+        justify-content: center;
+        margin: 2rem auto;
+        
+    }
+    #vsb_d{
+        align-content: center;
+    }
+
+    
+}
+
+
+@media screen and (min-width:800px){
+    .desc1{
+        text-align: right;
+        font-size: 1.6rem;
+    }
+    .head1{
+        font-size:5rem;
+    }
 }

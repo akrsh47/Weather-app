@@ -65,7 +65,8 @@ async function getWeather(cty) {
   document.getElementById("temp").innerHTML = `${Math.round(data.main.temp)}&degC`;
   document.getElementById("dp").innerHTML = `${data.weather[0].main}`;
   //console.log(data.weather[0].main)
-  document.getElementById("wind_sp").innerText = `${data.wind.speed} Km/h`;
+  document.getElementById("wind_sp").innerText = Math.round(`${data.wind.speed}`);
+  document.getElementById("wind_sp").innerText+=" Km/h";
   document.getElementById("hum").innerText = `${data.main.humidity} %`;
   document.getElementById("cld").innerText = `${data.clouds.all} %`;
   document.getElementById("visb").innerText = Math.round(`${data.visibility}`/1000);
@@ -117,26 +118,30 @@ if(x.weather[0].main=="Drizzle"){
 
 }
 
+if(x.weather[0].main=="Mist"){
+  img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-wind"></i>`
+}
+
 }
 
 function ChangeVisibilityDescrip(x){
   if(x>=10){
-    vsb_d_doc.innerHTML=`Excellent Visibility`
+    vsb_d_doc.innerHTML=`(Excellent Visibility)`
   }
   else if(x<10 && x>5){
-    vsb_d_doc.innerHTML=`Good Visibility`
+    vsb_d_doc.innerHTML=`(Good Visibility)`
 
   }
   else if(x>2 && x<=5){
-    vsb_d_doc.innerHTML=`Moderate Visibility`
+    vsb_d_doc.innerHTML=`(Moderate Visibility)`
 
   }
   else if(x<=2 && x>=1){
-    vsb_d_doc.innerHTML=`Low Visibility`
+    vsb_d_doc.innerHTML=`(Low Visibility)`
 
   }
   else if(x<1){
-    vsb_d_doc.innerHTML=`Very Low Visibility`
+    vsb_d_doc.innerHTML=`(Very Low Visibility)`
 
   }
 }
