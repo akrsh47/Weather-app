@@ -1,8 +1,11 @@
+
+
 const inp1_doc = document.getElementById("inp1");
 const srch_btn_doc = document.getElementById("srch_btn");
 
 const error_doc = document.getElementById("error");
 const main_doc = document.getElementById("main")
+
 
 const img1_doc = document.getElementById("img1");
 const vsb_d_doc = document.getElementById("vsb_d")
@@ -12,6 +15,8 @@ const date = new Date();
 let city;
 
 year_doc.innerText=date.getFullYear()
+
+
 
 if (localStorage.length != 0) {
   city = JSON.parse(localStorage.getItem("city_name"));
@@ -40,7 +45,7 @@ srch_btn_doc.addEventListener("click", function () {
   }
 });
 
-const apiKey = "c1c47c38a946d9665464ffda0ffe5149";
+const apiKey = 'c1c47c38a946d9665464ffda0ffe5149';
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=`;
 
 async function getWeather(cty) {
@@ -110,16 +115,22 @@ if(x.weather[0].main=="Rain"){
 
 }
 if(x.weather[0].main=="Haze"){
+  degree=`0deg`
+  img1_doc.style.rotate=`${degree}`
   img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-smog"></i>`
+  
 }
 if(x.weather[0].main=="Drizzle"){
   img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-cloud-rain"></i>`
+
 
 
 }
 
 if(x.weather[0].main=="Mist"){
   img1_doc.innerHTML=`<i class="fa-sharp fa-solid fa-wind"></i>`
+  degree=`0deg`
+  img1_doc.style.rotate=`${degree}`
 }
 
 }
