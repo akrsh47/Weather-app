@@ -20,7 +20,6 @@ if (localStorage.length != 0) {
   main_doc.style.display = "none";
 }
 
-// *****change this is css later *****
 error_doc.style.display = "none";
 
 srch_btn_doc.addEventListener("click", function () {
@@ -37,7 +36,8 @@ srch_btn_doc.addEventListener("click", function () {
   }
 });
 
-const apiKey = "c1c47c38a946d9665464ffda0ffe5149";
+// ADD YOUR API KEY HERE
+const apiKey = "APIKEYHERE";
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=`;
 
 async function getWeather(cty) {
@@ -47,19 +47,17 @@ async function getWeather(cty) {
     error_doc.style.display = "block";
     main_doc.style.display = "none";
     localStorage.clear();
-    //location.reload()
   } else {
     error_doc.style.display = "none";
   }
 
   let data = await response.json();
-  //console.log(data);
 
   document.getElementById("temp").innerHTML = `${Math.round(
     data.main.temp
   )}&degC`;
   document.getElementById("dp").innerHTML = `${data.weather[0].main}`;
-  //console.log(data.weather[0].main)
+
   document.getElementById("wind_sp").innerText = Math.round(
     `${data.wind.speed}`
   );
@@ -76,17 +74,15 @@ async function getWeather(cty) {
 
   ChangeIcon(data);
   ChangeVisibilityDescrip(Math.round(data.visibility / 1000));
-  //console.log(Math.round(data.visibility/1000))
 }
 
 function ChangeIcon(x) {
-  //img1_doc.classList.remove("rotate")
   let degree = `0deg`;
   img1_doc.style.rotate = `${degree}`;
 
   if (x.weather[0].main == "Clear") {
     img1_doc.innerHTML = `<i class="fa-sharp fa-solid fa-sun"></i>`;
-    //img1_doc.classList.add("rotate")
+
     degree = `360deg`;
 
     img1_doc.style.rotate = `${degree}`;
